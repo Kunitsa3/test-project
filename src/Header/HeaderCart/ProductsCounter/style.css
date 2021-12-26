@@ -1,0 +1,26 @@
+.products-counter-wrapper {
+  height: 1.43em;
+  width: 1.43em;
+  font-size: 14px;
+  border-radius: 50%;
+  background-color: #1D1F22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+}
+
+.products-in-cart-counter {
+  color: #fff;
+  font-weight: bold;
+  line-height: 16px;
+  text-transform: uppercase;
+  display: flex;
+  font-family: Roboto;
+}
+
+.invisible {
+  display: none;
+}

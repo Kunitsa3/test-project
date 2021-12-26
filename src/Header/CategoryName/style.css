@@ -1,0 +1,21 @@
+.category-names-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.category-name-item {
+  font-family: Raleway;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 120%;
+  margin: 0px 16px;
+  cursor: pointer;
+}
+
+.active-category-name {
+  padding-bottom: 30px;
+  color: #5ECE7B;
+  border-bottom: 1px solid;
+  border-bottom-color: #5ECE7B;
+}

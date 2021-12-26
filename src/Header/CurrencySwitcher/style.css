@@ -1,0 +1,19 @@
+.currency-switcher-wrapper {
+  margin-right: 42px;
+  position: relative;
+
+}
+
+.currency-switcher-items-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.currency-switcher-arrow {
+  margin-left: 10px;
+}
+
+.opened {
+  transform: rotate(180deg);
+}

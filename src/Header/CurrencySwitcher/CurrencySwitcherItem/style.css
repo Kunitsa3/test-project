@@ -1,0 +1,21 @@
+.currency-switcher-item-wrapper {
+  padding: 20px 0 0 20px;
+  width: 114px;
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+  position: absolute;
+  top: 150%;
+  left: -40%;
+}
+
+.currency-name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  margin-bottom: 21px;
+  cursor: pointer;
+}
+
+.active-currency-name {
+  color: #5ECE7B;
+}

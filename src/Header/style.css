@@ -1,0 +1,25 @@
+.header-wrapper {
+  padding: 24px 101px 32px 101px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  background-color: #fff;
+}
+
+.header-actions-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 24px;
+  right: 101px
+}
+
+.main-icon-wrapper {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
