@@ -1,19 +1,20 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { FC, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 import CartPicture from '../../assets/icons/CartPicture';
 import Cart from '../../Cart';
 import { changeBackgroundColor } from '../../store';
+
 import ProductsCounter from './ProductsCounter';
 import './style.css';
 
-const HeaderCart = () => {
+const HeaderCart: FC = () => {
   const [isShortCartOpened, setShortCartOpened] = useState(false);
-  const backgroundColor = useSelector(state => state.backgroundColor);
   const dispatch = useDispatch();
 
-  const onShirtCartClick = () => {
+  const onShirtCartClick = (): void => {
     setShortCartOpened(oldState => !oldState);
-    dispatch(changeBackgroundColor(!backgroundColor));
+    dispatch(changeBackgroundColor());
   };
 
   return (

@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import './style.css';
 
 import { useQuery, gql } from '@apollo/client';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeProductsCategories } from '../../store';
+import { FC } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { changeProductsCategories, useAppSelector } from '../../store';
 
 const PRODUCT_CATEGORIES = gql`
   query {
@@ -12,13 +15,19 @@ const PRODUCT_CATEGORIES = gql`
   }
 `;
 
-const CategoryName = () => {
-  const { loading, error, data } = useQuery(PRODUCT_CATEGORIES);
+interface CategoriesRequest {
+  categories: { name: string }[];
+}
+
+const CategoryName: FC = () => {
+  const { data } = useQuery<CategoriesRequest>(PRODUCT_CATEGORIES);
   const dispatch = useDispatch();
-  const onProductCategoryClick = productCategory => {
+
+  const onProductCategoryClick = (productCategory: string): void => {
     dispatch(changeProductsCategories(productCategory));
   };
-  const currentProductCategory = useSelector(state => state.appConfigurations.productsCategory);
+
+  const currentProductCategory = useAppSelector(state => state.appConfigurations.productsCategory);
 
   return (
     <div className="category-names-wrapper">
@@ -28,7 +37,7 @@ const CategoryName = () => {
             currentProductCategory === element.name ? 'active-category-name category-name-item' : 'category-name-item'
           }
           key={elementIndex}
-          onClick={() => onProductCategoryClick(element.name)}
+          onClick={(): void => onProductCategoryClick(element.name)}
         >
           {element.name.toUpperCase()}
         </p>

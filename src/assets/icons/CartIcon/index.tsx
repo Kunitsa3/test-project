@@ -1,4 +1,10 @@
-const CartIconPicture = ({ className }) => (
+import { FC } from 'react';
+
+interface CartIconPictureProps {
+  className?: string;
+}
+
+const CartIconPicture: FC<CartIconPictureProps> = ({ className }) => (
   <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <g filter="url(#filter0_d_150_263)">
       <circle cx="37" cy="33" r="26" fill="#5ECE7B" />

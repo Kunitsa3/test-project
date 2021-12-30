@@ -1,10 +1,13 @@
+import { FC } from 'react';
+
+import MainIconPicture from '../assets/icons/MainIcon';
+
 import CategoryName from './CategoryName';
 import CurrencySwitcher from './CurrencySwitcher';
 import './style.css';
-import MainIconPicture from '../assets/icons/MainIcon';
 import HeaderCart from './HeaderCart';
 
-const Header = () => (
+const Header: FC = () => (
   <div className="header-wrapper">
     <CategoryName />
     <MainIconPicture className="main-icon-wrapper" />

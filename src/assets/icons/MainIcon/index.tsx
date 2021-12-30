@@ -1,4 +1,10 @@
-const MainIconPicture = ({ className }) => (
+import { FC } from 'react';
+
+interface MainIconPictureProps {
+  className?: string;
+}
+
+const MainIconPicture: FC<MainIconPictureProps> = ({ className }) => (
   <svg width="33" height="31" viewBox="0 0 33 31" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <g clipPath="url(#clip0_150_1422)">
       <path

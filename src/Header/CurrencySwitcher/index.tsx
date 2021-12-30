@@ -1,13 +1,17 @@
-import { useState } from 'react';
-import CurrencySwitcherItem from './CurrencySwitcherItem';
-import CurrencySwitcherPicture from '../../assets/icons/CurrencySwitcherPictures/CurrencySwitcherPicture';
 import clsx from 'clsx';
-import './style.css';
+import { useState } from 'react';
+
 import CurrencySwitcherArrow from '../../assets/icons/CurrencySwitcherPictures/CurrencySwitcherArrow';
+import CurrencySwitcherPicture from '../../assets/icons/CurrencySwitcherPictures/CurrencySwitcherPicture';
+
+import CurrencySwitcherItem from './CurrencySwitcherItem';
+
+import './style.css';
 
 const CurrencySwitcher = () => {
   const [isCurrencySwitcherOpened, setCurrencySwitcherOpened] = useState(false);
-  const onCurrencySwitcherClick = () => {
+
+  const onCurrencySwitcherClick = (): void => {
     setCurrencySwitcherOpened(oldState => !oldState);
   };
 

@@ -1,7 +1,10 @@
-import ProductCardItem from './ProductCardItem';
 import './style.css';
 import { useQuery, gql } from '@apollo/client';
-import { useSelector } from 'react-redux';
+import { FC } from 'react';
+
+import { useAppSelector, Product } from '../store';
+
+import ProductCardItem from './ProductCardItem';
 
 const PRODUCT_DETAILS = gql`
   query {
@@ -30,12 +33,15 @@ const PRODUCT_DETAILS = gql`
   }
 `;
 
-const ProductCard = () => {
-  const { loading, error, data } = useQuery(PRODUCT_DETAILS);
-  const currentProductCategory = useSelector(state => state.appConfigurations.productsCategory);
-  console.log(data);
+interface ProductsRequest {
+  categories: { name: string; products: Product[] }[];
+}
 
-  const clothesData = data?.categories.find(element => element.name === currentProductCategory).products;
+const ProductCard: FC = () => {
+  const { data } = useQuery<ProductsRequest>(PRODUCT_DETAILS);
+  const currentProductCategory = useAppSelector(state => state.appConfigurations.productsCategory);
+
+  const clothesData = data?.categories?.find(element => element.name === currentProductCategory)?.products;
 
   return (
     <div className="product-card-wrapper">
@@ -43,9 +49,9 @@ const ProductCard = () => {
         {currentProductCategory[0].toUpperCase() + currentProductCategory.slice(1)}
       </p>
       <div className="product-card-items-wrapper">
-        {clothesData?.map((element, index) => {
-          return <ProductCardItem productDetails={element} key={element.id} />;
-        })}
+        {clothesData?.map(element => (
+          <ProductCardItem productDetails={element} key={element.id} />
+        ))}
       </div>
     </div>
   );
