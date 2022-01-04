@@ -1,0 +1,107 @@
+.product-card-item-wrapper {
+  display: flex;
+  padding: 20px 100px;
+}
+
+.small-product-photo-wrapper {
+  margin-right: 40px;
+}
+
+.small-product-photo {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.main-product-information {
+  margin-right: 100px;
+}
+
+.active-product-photo {
+  width: 40vw;
+}
+
+.product-card-item-page-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.product-card-item-page-brand-name {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 27px;
+}
+
+.product-card-item-page-name {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 27px;
+  margin-top: 16px;
+}
+
+.product-card-item-page-size {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 43px;
+  margin-bottom: 8px;
+}
+
+.product-card-item-page-price {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 40px;
+}
+
+.product-card-item-page-price-amount {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 18px;
+  margin-top: 20px;
+}
+
+.product-card-item-page-description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 159.96%;
+  margin-top: 40px;
+}
+
+.product-card-item-page-size-buttons-wrapper {
+  display: flex;
+}
+
+.product-card-item-page-button-size {
+  margin-right: 12px;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  width: 3.9em;
+  height: 2.8em;
+}
+
+.product-card-item-page-button {
+  margin-top: 20px;
+  padding: 16px 32px;
+  background: #5ECE7B;
+  color: #fff;
+  border: 1px solid #5ECE7B;
+  cursor: pointer;
+}

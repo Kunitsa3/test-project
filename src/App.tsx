@@ -1,8 +1,10 @@
 import { FC, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './App.css';
+
 import Header from './Header';
-import ProductCard from './ProductCard';
+import { routes } from './routing';
 import { useAppSelector } from './store';
 
 const App: FC = () => {
@@ -15,8 +17,14 @@ const App: FC = () => {
   return (
     <div className="App">
       {darkBackground && <div className="dark-background" />}
-      <Header />
-      <ProductCard />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          {routes.map(route => (
+            <Route {...route} />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

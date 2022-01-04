@@ -9,9 +9,10 @@ interface AttributeButtonProps {
     value?: string;
   };
   onClick?: () => void;
+  className?: string;
 }
 
-const AttributeButton: FC<AttributeButtonProps> = ({ attribute, onClick, active, disabled }) => {
+const AttributeButton: FC<AttributeButtonProps> = ({ attribute, onClick, active, disabled, className }) => {
   const isColor = attribute?.value?.[0] === '#';
 
   return (
@@ -21,6 +22,7 @@ const AttributeButton: FC<AttributeButtonProps> = ({ attribute, onClick, active,
       disabled={disabled}
       onClick={onClick}
       active={active}
+      className={className}
     >
       {isColor || attribute?.value}
     </SquareButton>

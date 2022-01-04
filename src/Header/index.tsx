@@ -9,11 +9,13 @@ import HeaderCart from './HeaderCart';
 
 const Header: FC = () => (
   <div className="header-wrapper">
-    <CategoryName />
-    <MainIconPicture className="main-icon-wrapper" />
-    <div className="header-actions-wrapper">
-      <CurrencySwitcher />
-      <HeaderCart />
+    <div className="header-item">
+      <CategoryName />
+      <MainIconPicture className="main-icon-wrapper" />
+      <div className="header-actions-wrapper">
+        <CurrencySwitcher />
+        <HeaderCart />
+      </div>
     </div>
   </div>
 );

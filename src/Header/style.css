@@ -1,10 +1,9 @@
-.header-wrapper {
+.header-item {
   padding: 24px 101px 32px 101px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  position: relative;
   background-color: #fff;
 }
 

@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import CartIcon from '../../assets/icons/CartIcon';
 import AttributeButton from '../../components/AttributeButton';
@@ -23,15 +25,25 @@ const ProductCardItem: FC<ProductCardItemProps> = ({ productDetails }) => {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const onCartIconClick = () => {
+  const onCartIconClick = (): void => {
     dispatch(addProductInCart({ ...productDetails, selectedAttribute }));
+  };
+
+  const onProductClick = (): void => {
+    navigate(`/productCardItemPage/${productDetails.id}`);
   };
 
   return (
     <div className="product-card-item">
       <div className="cart-item-picture-wrapper">
-        <img src={productDetails.gallery[0]} alt="Ничего не получилось" className="product-item-photo" />
+        <img
+          src={productDetails.gallery[0]}
+          alt="Ничего не получилось"
+          className="product-item-photo"
+          onClick={(): void => onProductClick()}
+        />
         {attributesPresence ? (
           selectedAttribute && (
             <div onClick={onCartIconClick}>
@@ -46,7 +58,9 @@ const ProductCardItem: FC<ProductCardItemProps> = ({ productDetails }) => {
       </div>
       <div className="product-card-details">
         <div>
-          <p className="product-name">{productDetails.name}</p>
+          <p className="product-name" onClick={(): void => onProductClick()}>
+            {productDetails.name}
+          </p>
           <p className="product-price">{(clothesPrice?.currency.symbol || '$') + (clothesPrice?.amount || 0)}</p>
         </div>
         <div className="product-card-attributes">
@@ -56,7 +70,7 @@ const ProductCardItem: FC<ProductCardItemProps> = ({ productDetails }) => {
             return (
               <AttributeButton
                 key={index}
-                onClick={() => onAttributeButtonClick(attribute.value)}
+                onClick={(): void => onAttributeButtonClick(attribute.value)}
                 attribute={attribute}
                 active={isActive}
               />
